@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سنة و7 شهور من الحب | 2025/2/3 💖</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cairo:wght@300;400;600;700;800&family=Reem+Kufi:wght@500;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Canvas Confetti JS -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        roseGold: '#B76E79',
+                        deepCrimson: '#800020',
+                        velvetRed: '#4A0E17',
+                        softPink: '#FFF0F3',
+                        warmGold: '#D4AF37',
+                    },
+                    fontFamily: {
+                        cairo: ['Cairo', 'sans-serif'],
+                        amiri: ['Amiri', 'serif'],
+                        reem: ['Reem Kufi', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Cairo', sans-serif;
+            background: linear-gradient(135deg, #1a050a 0%, #380b18 50%, #120206 100%);
+            color: #fff;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .glass-card {
+            background: rgba(255, 240, 243, 0.05);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 215, 0, 0.15);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+        }
+
+        .glass-modal {
+            background: rgba(28, 6, 12, 0.92);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+        }
+
+        @keyframes floatUp {
+            0% { transform: translateY(100vh) scale(0.3) rotate(0deg); opacity: 0; }
+            20% { opacity: 0.8; }
+            100% { transform: translateY(-10vh) scale(1.2) rotate(360deg); opacity: 0; }
+        }
+
+        .heart-particle {
+            position: fixed;
+            pointer-events: none;
+            z-index: 1;
+            animation: floatUp 8s linear infinite;
+        }
+
+        .glow-button {
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        .glow-button:hover {
+            box-shadow: 0 0 25px rgba(212, 175, 55, 0.8);
+            transform: translateY(-2px);
+        }
+
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #1a050a; }
+        ::-webkit-scrollbar-thumb { background: #800020; border-radius: 4px; }
+
+        .player-progress-bg { background: rgba(255, 255, 255, 0.1); }
+        .player-progress-fill { background: linear-gradient(90deg, #B76E79, #D4AF37); }
+    </style>
+</head>
+<body class="relative min-h-screen text-slate-100 selection:bg-roseGold selection:text-white">
+
+    <!-- Audio tag linked directly to local song.mp3 file -->
+    <audio id="bgAudio" preload="auto" playsinline loop crossorigin="anonymous">
+        <source src="./song.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Background Floating Hearts Particles Container -->
+    <div id="heartsContainer" class="fixed inset-0 pointer-events-none z-0 overflow-hidden"></div>
+
+    <!-- SECTION 1: PASSWORD LOCK SCREEN -->
+    <div id="lockScreen" class="fixed inset-0 z-50 flex items-center justify-center p-4 transition-all duration-700">
+        <div class="glass-modal max-w-md w-full p-8 rounded-3xl text-center shadow-2xl relative border border-rose-500/20 transform hover:scale-[1.01] transition">
+            
+            <div class="w-20 h-20 mx-auto mb-6 rounded-full bg-gradient-to-tr from-rose-600 to-pink-500 flex items-center justify-center shadow-lg shadow-rose-900/50 animate-bounce">
+                <i class="fa-solid fa-heart-lock text-3xl text-white"></i>
+            </div>
+
+            <h1 class="text-3xl font-bold font-reem text-transparent bg-clip-text bg-gradient-to-r from-pink-300 via-rose-200 to-amber-200 mb-2">
+                الموقع مقفول برقم سري 💖
+            </h1>
+            <p class="text-slate-300 text-sm mb-6 leading-relaxed">
+                اكتبي تاريخ اليوم اللي نورتيلي حياتي فيه وبقي ليها معني بوجودك.. تاريخ بداية حبنا يا أميرتي!
+            </p>
+
+            <form id="passwordForm" onsubmit="unlockSite(event)" class="space-y-4">
+                <div class="relative">
+                    <input type="text" id="passInput" placeholder="لو نسياهه هفشخك 😂🫵" 
+                           class="w-full px-5 py-3.5 rounded-2xl bg-black/40 border border-rose-400/30 text-center text-lg text-rose-200 placeholder-rose-300/40 focus:outline-none focus:border-rose-400 focus:ring-2 focus:ring-rose-500/50 transition">
+                </div>
+
+                <button type="submit" class="w-full py-3.5 rounded-2xl bg-gradient-to-r from-rose-600 via-rose-500 to-pink-600 text-white font-bold text-lg glow-button flex items-center justify-center gap-2">
+                    <span>خشي برجلك اليمين يعروسه 😍😂</span>
+                    <i class="fa-solid fa-key"></i>
+                </button>
+            </form>
+
+            <div class="mt-4 flex justify-between items-center text-xs text-rose-300/70">
+                <button type="button" onclick="showHint()" class="hover:text-amber-300 underline transition">
+                    <i class="fa-solid fa-lightbulb ml-1"></i> محتاجة تلميح؟
+                </button>
+                <span id="hintMessage" class="hidden text-amber-300 font-semibold animate-pulse">تاريخ ارتباطنا في فبراير 2025! 😉</span>
+            </div>
+
+            <!-- Error Banner -->
+            <div id="errorMessage" class="hidden mt-4 p-3 bg-red-900/40 border border-red-500/40 rounded-xl text-red-200 text-xs">
+              التاريخ غلط يبنتلوسخه ركزي عشان مفشخكيش 🥰
+            </div>
+        </div>
+    </div>
+
+    <!-- SECTION 2: MAIN UNLOCKED CONTENT -->
+    <div id="mainContent" class="hidden opacity-0 transition-opacity duration-1000 relative z-10 pb-32">
+        
+        <!-- TOP DATE DISPLAY BANNER -->
+        <div class="sticky top-0 z-40 bg-black/50 backdrop-blur-md border-b border-pink-500/10 px-4 py-3">
+            <div class="max-w-5xl mx-auto flex items-center justify-between">
+                <div class="flex items-center gap-2">
+                    <i class="fa-solid fa-heart text-rose-500 animate-pulse"></i>
+                    <span class="text-sm font-bold text-rose-200">سنة و7 شهور من الحب</span>
+                </div>
+
+                <div class="flex items-center gap-2">
+                    <span class="text-xs text-amber-300/80 font-mono">2025.02.03</span>
+                    <span class="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+                </div>
+            </div>
+        </div>
+
+        <!-- HERO HEADER SECTION -->
+        <header class="max-w-4xl mx-auto text-center pt-12 pb-8 px-4">
+            <div class="inline-block px-4 py-1.5 rounded-full bg-rose-500/10 border border-rose-500/30 text-rose-300 text-sm font-medium mb-4 shadow-inner">
+                ✨ الذكري السنوية: سنة و7 شهور معاً
+            </div>
+            
+            <h1 class="text-4xl md:text-6xl font-black font-reem text-transparent bg-clip-text bg-gradient-to-r from-pink-200 via-rose-300 to-amber-200 leading-tight mb-4">
+                سنة و7 شهور من الحب والتفاصيل الحلوة 💕
+            </h1>
+            
+            <p class="text-lg md:text-xl text-slate-300 font-amiri max-w-2xl mx-auto leading-relaxed">
+                "من يوم ما دخلتي حياتي في 3 فبراير 2025، وكل يوم بيكتشف قلبي إن الحب معاكي مش مجرد شعور.. الحب معاكي هو أسلوب حياة ووطن وأمان."
+            </p>
+        </header>
+
+        <!-- LIVE LOVE TIMER TICKER -->
+        <section class="max-w-4xl mx-auto px-4 my-8">
+            <div class="glass-card p-6 md:p-8 rounded-3xl border border-rose-500/20 text-center relative overflow-hidden">
+                <div class="absolute -top-10 -right-10 w-32 h-32 bg-rose-600/20 rounded-full blur-2xl pointer-events-none"></div>
+                
+                <h2 class="text-xl font-bold text-amber-200 mb-6 flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-hourglass-half text-rose-400"></i>
+                    بقالي مع حب عمري قد إيه؟
+                </h2>
+
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <div class="bg-black/40 p-4 rounded-2xl border border-rose-500/20">
+                        <span id="days" class="block text-3xl md:text-4xl font-extrabold text-pink-300 font-mono">0</span>
+                        <span class="text-xs text-slate-400 mt-1 block">يوم</span>
+                    </div>
+                    <div class="bg-black/40 p-4 rounded-2xl border border-rose-500/20">
+                        <span id="hours" class="block text-3xl md:text-4xl font-extrabold text-pink-300 font-mono">0</span>
+                        <span class="text-xs text-slate-400 mt-1 block">ساعة</span>
+                    </div>
+                    <div class="bg-black/40 p-4 rounded-2xl border border-rose-500/20">
+                        <span id="minutes" class="block text-3xl md:text-4xl font-extrabold text-pink-300 font-mono">0</span>
+                        <span class="text-xs text-slate-400 mt-1 block">دقيقة</span>
+                    </div>
+                    <div class="bg-black/40 p-4 rounded-2xl border border-rose-500/20">
+                        <span id="seconds" class="block text-3xl md:text-4xl font-extrabold text-amber-300 font-mono">0</span>
+                        <span class="text-xs text-slate-400 mt-1 block">ثانية</span>
+                    </div>
+                </div>
+
+                <p class="text-xs text-rose-300/80 mt-6 italic">
+                    وكل ثانية بتعدي بحبك فيها أكتر من اللي قبلها ✨
+                </p>
+            </div>
+        </section>
+
+        <!-- SECTION 3: OPEN WHEN / LOVE ENVELOPES -->
+        <section class="max-w-4xl mx-auto px-4 my-12">
+            <div class="text-center mb-8">
+                <h2 class="text-2xl md:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-rose-300 to-amber-200">
+                    رسائل من قلبي لقلبك ✉️
+                </h2>
+                <p class="text-slate-400 text-sm mt-1">اضغطي على أي ظرف علشان تفتحي الرسالة المستخبية جواه</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Envelope 1 -->
+                <div onclick="openLetter(1)" class="glass-card p-6 rounded-2xl border border-rose-500/30 text-center cursor-pointer hover:border-amber-400/50 hover:scale-105 transition duration-300 group">
+                    <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-rose-900/40 flex items-center justify-center text-2xl text-rose-300 group-hover:text-amber-300 group-hover:rotate-12 transition">
+                        <i class="fa-solid fa-envelope-open-text"></i>
+                    </div>
+                    <h3 class="font-bold text-rose-200 mb-2">لما بتوحشيني 💭</h3>
+                    <p class="text-xs text-slate-400">افتحي دي لما تكوني بعيدة عني ومش قادر أكون معاكي</p>
+                </div>
+
+                <!-- Envelope 2 -->
+                <div onclick="openLetter(2)" class="glass-card p-6 rounded-2xl border border-rose-500/30 text-center cursor-pointer hover:border-amber-400/50 hover:scale-105 transition duration-300 group">
+                    <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-rose-900/40 flex items-center justify-center text-2xl text-rose-300 group-hover:text-amber-300 group-hover:rotate-12 transition">
+                        <i class="fa-solid fa-heart-circle-check"></i>
+                    </div>
+                    <h3 class="font-bold text-rose-200 mb-2">ليه اخترتك أنت؟ 🌹</h3>
+                    <p class="text-xs text-slate-400">افتحي دي لما تسألي نفسك ليه أنتِ بالذات في قلبي</p>
+                </div>
+
+                <!-- Envelope 3 -->
+                <div onclick="openLetter(3)" class="glass-card p-6 rounded-2xl border border-rose-500/30 text-center cursor-pointer hover:border-amber-400/50 hover:scale-105 transition duration-300 group">
+                    <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-rose-900/40 flex items-center justify-center text-2xl text-rose-300 group-hover:text-amber-300 group-hover:rotate-12 transition">
+                        <i class="fa-solid fa-infinity"></i>
+                    </div>
+                    <h3 class="font-bold text-rose-200 mb-2">وعدي ليك السنين الجاية 💍</h3>
+                    <p class="text-xs text-slate-400">افتحي دي علشان تعرفي وعدي ليكي في المستقبل</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4: ROMANTIC MEMORIES GALLERY -->
+        <section class="max-w-4xl mx-auto px-4 my-12">
+            <div class="text-center mb-8">
+                <h2 class="text-2xl md:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-rose-300 to-amber-200">
+                    أحلى ذكريات السنة و7 شهور 📸
+                </h2>
+                <p class="text-slate-400 text-sm mt-1">محطات جميلة رسمت ضحكتنا وحبنا (اضغطي على الكارت لقراءة التفاصيل)</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Memory Card 1 -->
+                <div onclick="openCardDetails(1)" class="glass-card rounded-2xl overflow-hidden border border-rose-500/20 group cursor-pointer hover:border-amber-400/50 hover:scale-[1.02] transition duration-300">
+                    <div class="h-48 bg-gradient-to-br from-rose-900/50 via-purple-900/30 to-black flex items-center justify-center p-6 relative overflow-hidden">
+                        <i class="fa-solid fa-sparkles text-6xl text-rose-400/20 absolute -right-4 -bottom-4"></i>
+                        <div class="text-center">
+                            <span class="text-4xl mb-2 block">✨</span>
+                            <span class="text-amber-300 font-bold text-lg">بداية حكايتنا - 3 فبراير 2025</span>
+                        </div>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="text-lg font-bold text-rose-200 mb-2">اليوم اللي كل حاجة ابتدت فيه</h3>
+                        <p class="text-sm text-slate-300 leading-relaxed font-amiri line-clamp-2">
+                            بداية حكايتنا كانت بسبب استوري...
+                        </p>
+                        <span class="text-xs text-amber-300 mt-2 block underline">اضغطي هنا لقراءة التفاصيل 💕</span>
+                    </div>
+                </div>
+
+                <!-- Memory Card 2 -->
+                <div onclick="openCardDetails(2)" class="glass-card rounded-2xl overflow-hidden border border-rose-500/20 group cursor-pointer hover:border-amber-400/50 hover:scale-[1.02] transition duration-300">
+                    <div class="h-48 bg-gradient-to-br from-purple-900/50 via-rose-900/30 to-black flex items-center justify-center p-6 relative overflow-hidden">
+                        <i class="fa-solid fa-moon text-6xl text-rose-400/20 absolute -left-4 -bottom-4"></i>
+                        <div class="text-center">
+                            <span class="text-4xl mb-2 block">🌙</span>
+                            <span class="text-amber-300 font-bold text-lg">المحادثات والسهرات</span>
+                        </div>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="text-lg font-bold text-rose-200 mb-2">أكتر وقت بحس فيه بالأمان</h3>
+                        <p class="text-sm text-slate-300 leading-relaxed font-amiri line-clamp-2">
+                            المحادثات والسهرات دي بقى في حتة تانية بجد...
+                        </p>
+                        <span class="text-xs text-amber-300 mt-2 block underline">اضغطي هنا لقراءة التفاصيل 💕</span>
+                    </div>
+                </div>
+
+                <!-- Memory Card 3 -->
+                <div onclick="openCardDetails(3)" class="glass-card rounded-2xl overflow-hidden border border-rose-500/20 group cursor-pointer hover:border-amber-400/50 hover:scale-[1.02] transition duration-300">
+                    <div class="h-48 bg-gradient-to-br from-pink-900/50 via-red-900/30 to-black flex items-center justify-center p-6 relative overflow-hidden">
+                        <i class="fa-solid fa-hand-holding-heart text-6xl text-rose-400/20 absolute -right-4 -top-4"></i>
+                        <div class="text-center">
+                            <span class="text-4xl mb-2 block">🤝</span>
+                            <span class="text-amber-300 font-bold text-lg">الأمان والسند</span>
+                        </div>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="text-lg font-bold text-rose-200 mb-2">لما الأيام بتبقى صعبة</h3>
+                        <p class="text-sm text-slate-300 leading-relaxed font-amiri line-clamp-2">
+                            طول عمرك هتفضلي سندي والوحيدة اللي بحس معاها بالأمان...
+                        </p>
+                        <span class="text-xs text-amber-300 mt-2 block underline">اضغطي هنا لقراءة التفاصيل 💕</span>
+                    </div>
+                </div>
+
+                <!-- Memory Card 4 -->
+                <div onclick="openCardDetails(4)" class="glass-card rounded-2xl overflow-hidden border border-rose-500/20 group cursor-pointer hover:border-amber-400/50 hover:scale-[1.02] transition duration-300">
+                    <div class="h-48 bg-gradient-to-br from-amber-900/40 via-rose-900/40 to-black flex items-center justify-center p-6 relative overflow-hidden">
+                        <i class="fa-solid fa-crown text-6xl text-amber-400/20 absolute -left-4 -top-4"></i>
+                        <div class="text-center">
+                            <span class="text-4xl mb-2 block">👑</span>
+                            <span class="text-amber-300 font-bold text-lg">سنة و7 شهور من العشق</span>
+                        </div>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="text-lg font-bold text-rose-200 mb-2">سنة وسبع شهور مع بعض</h3>
+                        <p class="text-sm text-slate-300 leading-relaxed font-amiri line-clamp-2">
+                            كملنا سنة وسبع شهور مع بعض...
+                        </p>
+                        <span class="text-xs text-amber-300 mt-2 block underline">اضغطي هنا لقراءة التفاصيل 💕</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 5: INTERACTIVE LOVE METER & CELEBRATION BUTTON -->
+        <section class="max-w-2xl mx-auto px-4 my-12 text-center">
+            <div class="glass-card p-8 rounded-3xl border border-rose-500/30 relative">
+                <h2 class="text-2xl font-bold text-rose-200 mb-4">ابعتيلي جرعة حب دلوقتي 💌</h2>
+                <p class="text-sm text-slate-300 mb-6">كل ما تدوسي على الزرار ده، هينزل مطر من القلوب وهتوصلني دقة من قلبك!</p>
+
+                <button onclick="triggerLoveShower()" class="px-8 py-4 rounded-full bg-gradient-to-r from-pink-500 via-rose-600 to-amber-500 text-white font-extrabold text-lg glow-button transition flex items-center justify-center gap-3 mx-auto">
+                    <i class="fa-solid fa-heart text-2xl animate-pulse"></i>
+                    <span>اضغطي هنا لغمر الصفحة بالقلوب!</span>
+                    <i class="fa-solid fa-heart text-2xl animate-pulse"></i>
+                </button>
+
+                <div class="mt-6 flex items-center justify-center gap-2 text-amber-300 font-bold text-sm">
+                    <span>عدد القلوب المرسلة: </span>
+                    <span id="loveCounter" class="text-2xl font-mono text-rose-300">0</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer class="text-center text-xs text-slate-400 mt-16 pb-8">
+            <p>تم تصميم هذا الموقع بواسطه حبيبك ونور عينك حمودك واتصمم بكل حب وإخلاص لأجمل هنونة ف الدنيا بمناسبه مرور سنة و7 شهور معاً 💖</p>
+            <p class="text-amber-300/60 mt-1 font-mono">2025/2/3 ♾ إلى الأبد</p>
+        </footer>
+
+        <!-- MINI AUDIO PLAYER BANNER -->
+        <div class="fixed bottom-3 inset-x-3 md:inset-x-auto md:left-1/2 md:-translate-x-1/2 z-50 max-w-lg w-full bg-black/85 backdrop-blur-xl border border-rose-500/30 rounded-2xl p-3 shadow-2xl transition-all duration-300">
+            <div class="flex items-center gap-3">
+                <button id="playBtn" onclick="toggleAudio()" class="w-11 h-11 rounded-full bg-gradient-to-r from-rose-600 to-amber-500 hover:scale-105 active:scale-95 transition flex items-center justify-center text-white shadow-lg shrink-0">
+                    <i id="playIcon" class="fa-solid fa-play text-lg ml-0.5"></i>
+                </button>
+
+                <div class="flex-1 min-w-0">
+                    <div class="flex items-center justify-between mb-1">
+                        <h4 class="text-xs md:text-sm font-bold text-amber-200 truncate">يوم ما اتقابلنا - عمرو دياب 💖</h4>
+                        <span class="text-[10px] text-rose-300/80 font-semibold shrink-0">شغالة الآن</span>
+                    </div>
+
+                    <div onclick="seekAudio(event)" class="relative w-full h-2 player-progress-bg rounded-full cursor-pointer overflow-visible">
+                        <div id="progressBar" class="h-full player-progress-fill rounded-full w-0 transition-all duration-200 relative">
+                            <div class="absolute -left-2 -top-1.5 text-xs text-rose-400 drop-shadow animate-pulse">
+                                ❤
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- MODAL FOR LETTERS & CARDS DETAILS -->
+    <div id="letterModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md hidden opacity-0 transition-all duration-300">
+        <div class="glass-modal max-w-lg w-full p-6 md:p-8 rounded-3xl relative border border-rose-400/40 text-center max-h-[85vh] overflow-y-auto">
+            <button onclick="closeLetter()" class="absolute top-4 left-4 w-10 h-10 rounded-full bg-rose-900/50 hover:bg-rose-800 text-white flex items-center justify-center transition z-10">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <div id="modalIcon" class="text-4xl text-rose-400 mb-4">✉️</div>
+            <h3 id="modalTitle" class="text-2xl font-bold text-amber-200 mb-4 font-reem">عنوان الرسالة</h3>
+            
+            <div id="modalBody" class="text-slate-100 font-amiri text-lg leading-relaxed mb-6 text-right space-y-3 bg-black/30 p-5 rounded-2xl border border-rose-500/20">
+            </div>
+
+            <button onclick="closeLetter()" class="px-6 py-2.5 rounded-xl bg-rose-600 hover:bg-rose-500 text-white font-bold transition">
+                إغلاق الرسالة 💕
+            </button>
+        </div>
+    </div>
+
+    <script>
+        const START_DATE = new Date("2025-02-03T00:00:00");
+        let loveClickCount = 0;
+
+        const audio = document.getElementById('bgAudio');
+        let isPlaying = false;
+        let audioCtx = null;
+
+        function initAudioContext() {
+            if (!audioCtx) {
+                const AudioContext = window.AudioContext || window.webkitAudioContext;
+                if (AudioContext) {
+                    audioCtx = new AudioContext();
+                    audioCtx.resume();
+                }
+            }
+        }
+
+        audio.addEventListener('play', () => {
+            isPlaying = true;
+            const playIcon = document.getElementById("playIcon");
+            playIcon.classList.remove("fa-play", "ml-0.5");
+            playIcon.classList.add("fa-pause");
+        });
+
+        audio.addEventListener('pause', () => {
+            isPlaying = false;
+            const playIcon = document.getElementById("playIcon");
+            playIcon.classList.remove("fa-pause");
+            playIcon.classList.add("fa-play", "ml-0.5");
+        });
+
+        audio.addEventListener('timeupdate', () => {
+            if (audio.duration) {
+                const pct = (audio.currentTime / audio.duration) * 100;
+                document.getElementById("progressBar").style.width = pct + "%";
+            }
+        });
+
+        function playAudioSafely() {
+            initAudioContext();
+            audio.play().then(() => {
+                isPlaying = true;
+            }).catch(error => {
+                console.log("Audio autoplay prevented:", error);
+            });
+        }
+
+        function toggleAudio() {
+            if (isPlaying) {
+                audio.pause();
+            } else {
+                playAudioSafely();
+            }
+        }
+
+        function seekAudio(e) {
+            if (!audio.duration) return;
+            const rect = e.currentTarget.getBoundingClientRect();
+            const clickX = e.clientX - rect.left;
+            const width = rect.width;
+            const percentage = clickX / width;
+            audio.currentTime = audio.duration * percentage;
+        }
+
+        const VALID_PASSWORDS = [
+            "2025/2/3", "2025/02/03", "2025-2-3", "2025-02-03",
+            "3/2/2025", "03/02/2025", "3-2-2025", "03-02-2025"
+        ];
+
+        function unlockSite(e) {
+            e.preventDefault();
+            const input = document.getElementById("passInput").value.trim();
+            const errorMsg = document.getElementById("errorMessage");
+
+            if (VALID_PASSWORDS.includes(input)) {
+                errorMsg.classList.add("hidden");
+                
+                playAudioSafely();
+
+                const lockScreen = document.getElementById("lockScreen");
+                lockScreen.classList.add("opacity-0", "scale-95");
+                
+                setTimeout(() => {
+                    lockScreen.classList.add("hidden");
+                    
+                    const mainContent = document.getElementById("mainContent");
+                    mainContent.classList.remove("hidden");
+                    setTimeout(() => {
+                        mainContent.classList.remove("opacity-0");
+                    }, 50);
+
+                    triggerInitialConfetti();
+                    startTimer();
+                }, 700);
+
+            } else {
+                errorMsg.classList.remove("hidden");
+            }
+        }
+
+        function showHint() {
+            document.getElementById("hintMessage").classList.remove("hidden");
+        }
+
+        function startTimer() {
+            function update() {
+                const now = new Date();
+                const diff = now - START_DATE;
+
+                if (diff < 0) return;
+
+                const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+                const minutes = Math.floor((diff / 1000 / 60) % 60);
+                const seconds = Math.floor((diff / 1000) % 60);
+
+                document.getElementById("days").innerText = days;
+                document.getElementById("hours").innerText = hours;
+                document.getElementById("minutes").innerText = minutes;
+                document.getElementById("seconds").innerText = seconds;
+            }
+
+            update();
+            setInterval(update, 1000);
+        }
+
+        const lettersData = {
+            1: {
+                title: "لما بتوحشيني 💭",
+                icon: "💖",
+                htmlContent: `<p>لما بتوحشيني بفتح صورك أفضل أتأمل في ملامحك وأقول ازاي يارب الجمال ده كله ليا! عملت إيه يارب في دنيتي عشان تبقى راضي عني وترزقني بالجمال ده كله! يارب خليهالي ومتبعدناش عن بعض يارب.</p>
+                <p>وبفضل أفتح في شاتاتنا وأسهر عليها بالساعات أقرأ كلامنا وأضحك سوا بقى كان خنقان أو ضحك أو قلة أدب، بجد ببقى مبسوط أوي وأنا بقرأ كلامنا سوا وبسترجع ذكرياتنا.</p>
+                <p>ولما بتوحشيني برضه وبتبقي بعيدة عني بفضل أكتب كلام عنك وعن جمالك وعن حلاوتك وأحتفظ بيه لنفسي، حرفياً الـ note كلها حاجات بحضرها عشان لما تبقي معايا نعملها، بفضل أتخيل كده لو اتجوزتك هنعمل إيه وأكتبه وأفضل أكتب عن علاقتنا وبقول كل اللي جوايا حرفياً.</p>
+                <p class="text-amber-300 font-bold pt-2">وبس كده يا نور عيني عشان مطولش عليكِ، ربنا يخليكِ ليا يا حياتي ويحفظك 😍❤️❤️❤️❤️</p>`
+            },
+            2: {
+                title: "ليه اخترتك أنتِ؟ 🌹",
+                icon: "👑",
+                htmlContent: `<p>نيجي بقى لـ ليه اخترتك أنتِ.. اخترتك أنتِ عشان مفيش أجمل منك ولا أحسن ولا أحن منك يبقى شريك ليا بجد، مشلاقي ولا هلاقي أجمل من عيونك يا عيوني.</p>
+                <p>اخترتك أنتِ عشان حنيتك عليا لو تعبان أو في أي حاجة في حياتي عامة أول واحدة بجرى عليها وبحكيلها، بعتبرك أمي التانية بجد مبعتبركيش حبيبتي بس، بعتبرك بنتي وحبيبتي ومراتي وصاحبتي وكل ما ليا حرفياً.</p>
+                <p>اخترتك أنتِ عشان أنتِ بالنسبة لي دنيتي وحياتي كلها، لو خيروني بينك وبين الدنيا كلها هختارك أنتِ يا نور عيني والله بجد، طالما أنتِ معايا مش عايز حاجة من الدنيا دي خالص لأنك دنيتي وحياتي وحرفياً كل حاجة محلية دنيتي ومخلياني أعيش هو أنتِ بجد.</p>
+                <p class="text-pink-300 font-bold pt-2">فربنا يخليكِ ليا يا نور عيني وميحرمنيش منك أبداً ولا من جمالك اللي مدوبني على طول ده 🥹❤️❤❤️❤️</p>`
+            },
+            3: {
+                title: "وعدي ليكي السنين الجاية 💍",
+                icon: "✨",
+                htmlContent: `<p>وعدي ليكي السنين الجاية إني بجد هحاول مع الدنيا كلها عشانك عشان ربنا يجمعني بيكي ومستحيل أسيبك مهما كانت الظروف، لو الدنيا كلها وقفت قصادي هقف قصادها وهحارب وهسعى عشانك.</p>
+                <p>هعمل المستحيل حرفياً عشان ربنا يجمعني بيكي مهماحصل ومهما هيحصل مش هشوف غيرك ومش هسعى عشان حد غيرك، وبجد مهما كانت الظروف مستحيل أسيبك أو أتخلى عنك.</p>
+                <p>مش هتخلى عنك إلا في حالة واحدة وهي إن ربنا ياخدني ساعتها هيكون غصب عني، غير كده هفضل محافظ عليكِ وهحاول مع الدنيا كلها عشانك.</p>
+                <p class="text-amber-300 font-bold pt-2">وطول ما إحنا مع بعض محدش هيقدر يقف قصادنا يا نور عيني ✨🩷🩷🩷🩷🩷</p>`
+            }
+        };
+
+        const cardsData = {
+            1: {
+                title: "بداية حكايتنا 📖",
+                icon: "👸",
+                htmlContent: `<p>بداية حكايتنا كانت بسبب استوري، استوري رديت عليها وكنت ببعتها وأنا مكسوف أصلاً، بس من ساعتها لغاية دلوقتي بحمد ربنا وهفضل أحمده طول عمري إني عملت ريبلاي على الاستيت دي.</p>
+                <p>كان أحسن وأجمل يوم في حياتي يوم ما دخلتي حياتي ونورتيها بجد، قبل ما تخشي حياتي كانت كلها ضلمة، كنت شخصية ملهاش كارتالوج حرفياً مكنتش بسعى عشان حد وممش فارق معايا حد ومببحبش غير نفسي وممش فارق معايا الدنيا باللي فيها.</p>
+                <p>جيتي أنتِ نورتي حياتي وعرفتيني يعني إيه حياة بجد، وعرفتيني يعني إيه أحب شخص وأكون بسعى عشانه وعشان أحافظ عليه، عرفتيني إن الحياة مهمة وفي حاجات حلوة نستاهل نعيش سوا عشان نحققها بجد.</p>
+                <p>أنا من غيرك مكنتش عملت أي حاجة في حياتي، مكنتش اتعلمت حاجة، مكنتش بصيت لمستقبلي، مكنتش بصيت لـ ازاي إني أحسن من نفسي، كنت عايش وبعمل كل حاجة غلط وروحي مكنتش فارقة عندي.</p>
+                <p class="text-pink-300 font-bold pt-2">جيتي أنتِ بجد عرفتيني إن الحياة مهمة وفي تفاصيل لما نحققها هنتبسط بيها بجد، الحياة من غيرك كانت وحشة أوي، دخلتي أنتِ نورتيها بجمالك وحنيتك عليا، فربنا يخليكِ ليا يا نور عيني ويحفظك وميحرمنيش منك أبداً 👸❣❣️❣️❣️❣</p>`
+            },
+            2: {
+                title: "المحادثات والسهرات 🌙",
+                icon: "🌙",
+                htmlContent: `<p>المحادثات والسهرات دي بقا ف حته تانيه بجد، اكتر وقت بحس ب الامان فيه هو وانا بكلمك بجد. كنت بستنا يومي kلو يخلص بقرفو بهمو عشان اجي افضفض واحكي معاكي ونتكلم ف كل حاجة.</p>
+                <p>بجد اكتر وقت بحب اعيشو هو وقتي ونا بكلمك، بحس اني اسعد انسان ف الدنيا! بحب اتكلم معاكي وانكشك واشوف غيرتك عليا، بحبك ونتي بتحكيلي تفاصيل يومك وازاي بيعدي، وبتبسط اوي بانجازتك لما تقوليلي انا عملت حاجة، ببق زي الاب الي فخور ببنتو والله، ببق فخور بيكي اوي ف اصغر حاجة بتعمليها.</p>
+                <p>بجد بحبك ف كل حلاتك، بحب نكدك الي بيبق من غير سبب بليل، بحب كل تفاصيلك، بحب ضحكنا الي بنفضل نضحكو طول الليل، بحب كسوفك لما بقل ادبي معاكي، بحبك ف كل حلاتك بجد.</p>
+                <p class="text-amber-300 font-bold pt-2">واحسن وقت ف دنيتي كلها هو وقت مبكون جمبك وبنتكلم، بجد دي عندي بتبق بالدنيا كلها 🌏💕💕💕💕💕</p>`
+            },
+            3: {
+                title: "الأمان والسند 🤝",
+                icon: "🫵",
+                htmlContent: `<p>طول عمرك هتفضلي سندي والوحيدة اللي بحس معاها بالأمان بجد، مبثقش في حد في دنيتي غيرك، عمري ما أديت الأمان والثقة دي كلها لحد وبالذات لو بنت كمان.</p>
+                <p>عمري ما وثقت في بنت أو حبيت بنت عموماً لغاية ما جيتي أنتِ وغيرتي نظرتي للحياة كلها وعلمتيني يعني إيه حب وخليتيني أحبك وما عرفتش معنى الحياة غير معاكي.</p>
+                <p class="text-amber-300 font-bold pt-2">فبجد بجد بحبك أوي يا نور عيني يا سندي ودنيتي وأجمل بنوتة شافتها عيني في الدنيا دي كلها 🫵💞💞💞💞💞💞</p>`
+            },
+            4: {
+                title: "سنة و7 شهور من العشق 👑",
+                icon: "🥰",
+                htmlContent: `<p>كملنا سنة وسبع شهور مع بعض، هما اه كان أغلبيتهم خناقات ومشاكل وظروف مكنتش بإيدينا، بس بجد كانت أحسن سنة وسبع شهور في حياتي كلها.</p>
+                <p>بس بجد أي لحظة معاكي مستعد أدفع عمري كله عشانها، كملنا سنة وسبع شهور مع بعض وهنكمل بقية عمرنا كله مع بعض بإذن الله، لأن بجد سوا كنتي بعيدة عني أو قريبة مني أنا حبي بيزيد ليكي كل ثانية والله العظيم.</p>
+                <p class="text-pink-300 font-bold pt-2">ربنا يخليكِ ليا يا أجمل هنونة في الدنيا وميحرمنيش منك أبداً 🥰💝💝💝💝💝</p>`
+            }
+        };
+
+        function openLetter(id) {
+            const data = lettersData[id];
+            if (!data) return;
+
+            document.getElementById("modalTitle").innerText = data.title;
+            document.getElementById("modalIcon").innerText = data.icon;
+            document.getElementById("modalBody").innerHTML = data.htmlContent;
+
+            const modal = document.getElementById("letterModal");
+            modal.classList.remove("hidden");
+            setTimeout(() => modal.classList.remove("opacity-0"), 10);
+        }
+
+        function openCardDetails(id) {
+            const data = cardsData[id];
+            if (!data) return;
+
+            document.getElementById("modalTitle").innerText = data.title;
+            document.getElementById("modalIcon").innerText = data.icon;
+            document.getElementById("modalBody").innerHTML = data.htmlContent;
+
+            const modal = document.getElementById("letterModal");
+            modal.classList.remove("hidden");
+            setTimeout(() => modal.classList.remove("opacity-0"), 10);
+        }
+
+        function closeLetter() {
+            const modal = document.getElementById("letterModal");
+            modal.classList.add("opacity-0");
+            setTimeout(() => modal.classList.add("hidden"), 300);
+        }
+
+        function createHeart() {
+            const container = document.getElementById("heartsContainer");
+            const heart = document.createElement("div");
+            heart.classList.add("heart-particle");
+
+            const icons = ["❤", "💖", "💕", "✨", "🌸", "💗"];
+            heart.innerText = icons[Math.floor(Math.random() * icons.length)];
+
+            heart.style.left = Math.random() * 100 + "vw";
+            heart.style.animationDuration = Math.random() * 4 + 6 + "s";
+            heart.style.fontSize = Math.random() * 15 + 15 + "px";
+
+            container.appendChild(heart);
+
+            setTimeout(() => { heart.remove(); }, 10000);
+        }
+
+        setInterval(createHeart, 600);
+
+        function triggerInitialConfetti() {
+            confetti({
+                particleCount: 100,
+                spread: 70,
+                origin: { y: 0.6 },
+                colors: ['#B76E79', '#D4AF37', '#FF1493', '#FFFFFF']
+            });
+        }
+
+        function triggerLoveShower() {
+            loveClickCount++;
+            document.getElementById("loveCounter").innerText = loveClickCount;
+
+            confetti({
+                particleCount: 40,
+                angle: 60,
+                spread: 55,
+                origin: { x: 0 },
+                colors: ['#ff4d6d', '#ff758f', '#ffb3c1']
+            });
+            confetti({
+                particleCount: 40,
+                angle: 120,
+                spread: 55,
+                origin: { x: 1 },
+                colors: ['#ff4d6d', '#ff758f', '#ffb3c1']
+            });
+        }
+    </script>
+</body>
+</html>
